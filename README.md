@@ -25,7 +25,7 @@ It allows you to train and evaluate neural networks (RNN, GRU, LSTM, Transformer
 You can install DLCore via `pip` (after cloning or downloading):
 
 ```bash
-git clone https://github.com/yourusername/dlcore.git
+git clone https://github.com/SOCIALPINE/dlcore.git
 cd dlcore
 pip install -r requirements.txt
 ```
