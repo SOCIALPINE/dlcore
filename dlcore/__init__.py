@@ -1,12 +1,13 @@
-from .core import DLCore, BaseModel, RNN, GRU, LSTM, TransformerEncoder, CNN, Sequential
-
-__all__ = [
-    "DLCore",
-    "BaseModel",
-    "RNN",
-    "GRU",
-    "LSTM",
-    "TransformerEncoder",
-    "CNN",
-    "Sequential"
-]
+from .core import (
+    DLCore,
+    RNN,
+    GRU,
+    LSTM,
+    CNN,
+    Sequential,
+    Linear,
+    ReLU,
+    MSELoss,
+    CrossEntropyLoss,
+    Adam
+)
