@@ -1,6 +1,6 @@
 # 🚀 DLCore
 
-![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
