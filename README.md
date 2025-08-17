@@ -11,18 +11,18 @@ It allows you to train and evaluate neural networks (RNN, GRU, LSTM, Transformer
 
 ## Features
 
-* Supports **RNN, GRU, LSTM, CNN, Transformer, Sequential**
-* Compatible with **PyTorch tensors & NumPy arrays**
-* Built-in **training loops, evaluation, metrics**
-* **Early stopping** & checkpoint saving
-* Flexible **metrics**: MSE, MAE, R2, Accuracy, F1
-* Lightweight and **easy to integrate** into existing projects
+* Supports RNN, GRU, LSTM, CNN, Transformer, Sequential
+* Compatible with PyTorch tensors & NumPy arrays
+* Built in training loops,evaluation,metrics
+* Early stopping & checkpoint saving
+* Flexible metrics: MSE, MAE, R2, Accuracy, F1
+* Lightweight and easy to integrate into existing projects
 
 ---
 
 ## Installation
 
-You can install DLCore by `pip` (recommended) or from GitHub:
+You can install DLCore by pip (recommended) or from GitHub:
 
 ```bash
 # Install from PyPI
@@ -45,15 +45,10 @@ pip install -r requirements.txt
 ```python
 import numpy as np
 import os
-import matplotlib.pyplot as plt
 import dlcore as tk
 
-# checkpoints
 os.makedirs("checkpoints", exist_ok=True)
 
-# ------------------------------
-# 1) RNN
-# ------------------------------
 rnn_model = tk.RNN(input_size=10, hidden_size=20, num_layers=2)
 trainer = tk.DLCore(
     rnn_model,
@@ -67,20 +62,15 @@ trainer = tk.DLCore(
     task='regression',
     verbose=1,
 )
-
 X_train = np.random.rand(200, 5, 10)
 y_train = np.random.rand(200, 5, 20)
 X_val = np.random.rand(50, 5, 10)
 y_val = np.random.rand(50, 5, 20)
 
-print("=== RNN Regression Training ===")
+print("RNN Training")
 trainer.fit(X_train, y_train, validation_data=(X_val, y_val))
-preds = trainer.predict(X_val)
-print("Prediction shape:", preds.shape)
+print("RNN Prediction:", trainer.predict(X_val).shape)
 
-# ------------------------------
-# 2) CNN
-# ------------------------------
 cnn_model = tk.CNN(in_channels=3, out_channels=16)
 trainer_cnn = tk.DLCore(
     cnn_model,
@@ -91,24 +81,17 @@ trainer_cnn = tk.DLCore(
     task='regression',
     verbose=1,
 )
-
 X_cnn = np.random.rand(150, 3, 50)
 y_cnn = np.random.rand(150, 16, 50)
-
-print("\n=== CNN Regression Training ===")
+print("CNN Training")
 trainer_cnn.fit(X_cnn, y_cnn)
-preds_cnn = trainer_cnn.predict(X_cnn)
-print("CNN Prediction shape:", preds_cnn.shape)
+print("CNN Prediction:", trainer_cnn.predict(X_cnn).shape)
 
-# ------------------------------
-# 3) MLP
-# ------------------------------
 mlp_model = tk.Sequential(
     tk.Linear(20, 50),
     tk.ReLU(),
     tk.Linear(50, 3),
 )
-
 trainer_cls = tk.DLCore(
     mlp_model,
     epochs=30,
@@ -122,21 +105,14 @@ trainer_cls = tk.DLCore(
     task='classification',
     verbose=1,
 )
-
 X_cls_train = np.random.rand(500, 20)
 y_cls_train = np.random.randint(0, 3, size=(500,))
 X_cls_val = np.random.rand(100, 20)
 y_cls_val = np.random.randint(0, 3, size=(100,))
-
-print("\n=== MLP Classification Training ===")
+print("MLP Training")
 trainer_cls.fit(X_cls_train, y_cls_train, validation_data=(X_cls_val, y_cls_val))
-preds_cls = trainer_cls.predict(X_cls_val)
-print("Classification Prediction shape:", preds_cls.shape)
-print("Sample predictions:", preds_cls[:10])
+print("MLP Prediction:", trainer_cls.predict(X_cls_val).shape)
 
-# ------------------------------
-# 4) GRU
-# ------------------------------
 gru_model = tk.GRU(input_size=10, hidden_size=15, num_layers=2)
 trainer_gru = tk.DLCore(
     gru_model,
@@ -149,12 +125,10 @@ trainer_gru = tk.DLCore(
 )
 X_gru = np.random.rand(100, 5, 10)
 y_gru = np.random.rand(100, 5, 15)
+print("GRU Training")
 trainer_gru.fit(X_gru, y_gru)
-print("\nGRU Regression Prediction shape:", trainer_gru.predict(X_gru).shape)
+print("GRU Prediction:", trainer_gru.predict(X_gru).shape)
 
-# ------------------------------
-# 5) Transformer
-# ------------------------------
 transformer_model = tk.TransformerEncoder(d_model=10, nhead=2, num_layers=2)
 trainer_trans = tk.DLCore(
     transformer_model,
@@ -165,16 +139,15 @@ trainer_trans = tk.DLCore(
     task='regression',
     verbose=1
 )
-X_trans = np.random.rand(50, 5, 10)  # (seq_len, batch, features)
+X_trans = np.random.rand(50, 5, 10)
 y_trans = np.random.rand(50, 5, 10)
+print("Transformer Training")
 trainer_trans.fit(X_trans, y_trans)
-print("\nTransformer Regression Prediction shape:", trainer_trans.predict(X_trans).shape)
-
+print("Transformer Prediction:", trainer_trans.predict(X_trans).shape)
 
 trainer.save_model("checkpoints/rnn_saved.pt")
-
 trainer.load_model("checkpoints/rnn_saved.pt")
-print("RNN model save/load success!")
+print("RNN save/load OK")
 
 ```
 
