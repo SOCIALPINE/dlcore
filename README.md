@@ -1,4 +1,4 @@
-# 🚀 DLCore
+# DLCore
 
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8-green)
@@ -9,20 +9,20 @@ It allows you to train and evaluate neural networks (RNN, GRU, LSTM, Transformer
 
 ---
 
-## ✨ Features
+## Features
 
-* ✅ Supports **RNN, GRU, LSTM, CNN, Transformer, Sequential**
-* ✅ Compatible with **PyTorch tensors & NumPy arrays**
-* ✅ Built-in **training loops, evaluation, metrics**
-* ✅ **Early stopping** & checkpoint saving
-* ✅ Flexible **metrics**: MSE, MAE, R2, Accuracy, F1
-* ✅ Lightweight and **easy to integrate** into existing projects
+* Supports **RNN, GRU, LSTM, CNN, Transformer, Sequential**
+* Compatible with **PyTorch tensors & NumPy arrays**
+* Built-in **training loops, evaluation, metrics**
+* **Early stopping** & checkpoint saving
+* Flexible **metrics**: MSE, MAE, R2, Accuracy, F1
+* Lightweight and **easy to integrate** into existing projects
 
 ---
 
-## 📦 Installation
+## Installation
 
-You can install DLCore via `pip` (recommended) or from GitHub:
+You can install DLCore by `pip` (recommended) or from GitHub:
 
 ```bash
 # Install from PyPI
@@ -32,13 +32,13 @@ pip install deeplcore
 git clone https://github.com/SOCIALPINE/dlcore.git
 cd dlcore
 pip install -r requirements.txt
-pip install .
+
 
 ```
 
 ---
 
-## 🏗 Quick Start
+## Quick Start
 
 ### Import DLCore
 
@@ -180,7 +180,7 @@ print("RNN model save/load success!")
 
 ---
 
-## 📊 Supported Metrics
+## Supported Metrics
 
 | Metric     | Task           |
 | ---------- | -------------- |
@@ -192,7 +192,7 @@ print("RNN model save/load success!")
 
 ---
 
-## 🔧 Checkpoints & Early Stopping
+## Checkpoints & Early Stopping
 
 DLCore supports:
 
@@ -205,24 +205,24 @@ trainer = DLCore(model=model, early_stopping=True, patience=5, checkpoint_path='
 
 ---
 
-## 💡 Examples
+## Examples
 
 See the `examples/` folder for ready-to-run examples:
 
 * `example.py`
 ---
 
-## 📄 License
+## License
 
 MIT License © 2025
 Feel free to use, modify, and distribute DLCore in your projects.
 
 ---
 
-## ❤️ Support / Contribute
+##  Support / Contribute
 
-If you enjoy DLCore, give it a ⭐ and feel free to submit pull requests or issues!
+If you enjoy DLCore, give it a star and feel free to submit pull requests or issues!
 
 ---
 
-Made with ❤️ by **dev_pine**
+Made by dev_pine
