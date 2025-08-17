@@ -4,8 +4,8 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
-DLCore is a **lightweight, flexible deep learning framework** built on PyTorch.
-It allows you to train and evaluate neural networks (RNN, GRU, LSTM, Transformer, CNN) **easily** with minimal boilerplate code. Perfect for **regression** and **classification** tasks.
+DLCore is a lightweight, flexible deep learning framework built on PyTorch.
+It allows you to train and evaluate neural networks (RNN, GRU, LSTM, Transformer, CNN) easily with minimal boilerplate code. Perfect for regression and classification tasks.
 
 ---
 
